@@ -35,6 +35,7 @@ in {
     pkgs.ripgrep
     pkgs.tree
     pkgs.watch
+    pkgs.emacs
 
     pkgs.gopls
     pkgs.zigpkgs.master
