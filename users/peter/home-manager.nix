@@ -35,14 +35,12 @@ in {
     pkgs.ripgrep
     pkgs.tree
     pkgs.watch
-    pkgs.emacs
-    pkgs.asdf
-    pkgs.zsh
+    #pkgs.emacs
 
     pkgs.gopls
     pkgs.zigpkgs.master
   ] ++ (lib.optionals isLinux [
-    #pkgs.chromium
+    pkgs.chromium
     pkgs.firefox
     pkgs.k2pdfopt
     pkgs.rofi
@@ -97,17 +95,25 @@ in {
     };
   };
 
-  programs.direnv= {
+  programs.vscode = {
+    enable = true;
+    extensions = with pkgs.vscode-extensions; [
+      dracula-theme.theme-dracula
+      vscodevim.vim
+      yzhang.markdown-all-in-one
+    ];
+  };
+
+  programs.direnv = {
     enable = true;
 
     config = {
       whitelist = {
         prefix= [
-          "$HOME/code/go/src/github.com/hashicorp"
-          "$HOME/code/go/src/github.com/mitchellh"
+          "$HOME/code"
         ];
 
-        exact = ["$HOME/.envrc"];
+        #exact = ["$HOME/.envrc"];
       };
     };
   };
@@ -120,6 +126,8 @@ in {
       "source ${sources.theme-bobthefish}/functions/fish_title.fish"
       (builtins.readFile ./config.fish)
       "set -g SHELL ${pkgs.fish}/bin/fish"
+      #". $HOME/.asdf/asdf.sh"
+      #". $HOME/.asdf/completions/asdf.bash"
     ]);
 
     shellAliases = {
