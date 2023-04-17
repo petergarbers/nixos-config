@@ -36,11 +36,13 @@ in {
     pkgs.tree
     pkgs.watch
     pkgs.emacs
+    pkgs.asdf
+    pkgs.zsh
 
     pkgs.gopls
     pkgs.zigpkgs.master
   ] ++ (lib.optionals isLinux [
-    pkgs.chromium
+    #pkgs.chromium
     pkgs.firefox
     pkgs.k2pdfopt
     pkgs.rofi
@@ -149,12 +151,12 @@ in {
 
   programs.git = {
     enable = true;
-    userName = "Mitchell Hashimoto";
-    userEmail = "mitchell.hashimoto@gmail.com";
-    signing = {
-      key = "523D5DC389D273BC";
-      signByDefault = true;
-    };
+    userName = "petergarbers";
+    userEmail = "peter@devthe.net";
+    #signing = {
+    #  key = "523D5DC389D273BC";
+    #  signByDefault = true;
+    #};
     aliases = {
       prettylog = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(r) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
       root = "rev-parse --show-toplevel";
@@ -164,9 +166,9 @@ in {
       color.ui = true;
       core.askPass = ""; # needs to be empty to use terminal for ask pass
       credential.helper = "store"; # want to make this more secure
-      github.user = "mitchellh";
+      github.user = "petergarbers";
       push.default = "tracking";
-      init.defaultBranch = "main";
+      init.defaultBranch = "master";
     };
   };
 
