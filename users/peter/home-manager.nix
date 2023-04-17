@@ -103,6 +103,13 @@ in {
     ];
   };
 
+  programs.zsh = {
+    enable = true;
+    package = pkgs.zsh;
+    initExtra = builtins.readFile ./zshrc;
+  };
+
+
   programs.emacs = {
     enable = true;
     package = pkgs.emacs;  # replace with pkgs.emacs-gtk, or a version provided by the community overlay if desired.
