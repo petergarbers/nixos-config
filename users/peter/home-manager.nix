@@ -105,8 +105,18 @@ in {
 
   programs.zsh = {
     enable = true;
-    package = pkgs.zsh;
-    initExtra = builtins.readFile ./zshrc;
+    shellAliases = {
+      ll = "ls -l";
+    };
+    history = {
+      size = 10000;
+      path = "${config.xdg.dataHome}/zsh/history";
+    };
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "direnv" "fzf" "git" "git-extras" "docker" "history" "ssh-agent" "gpg-agent" "zsh-completions" "thefuck" ];
+      theme = "agnoster";
+    };
   };
 
 
