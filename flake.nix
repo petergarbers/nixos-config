@@ -25,11 +25,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    devenv.url = "github:cachix/devenv/latest";
+
     # Other packages
     zig.url = "github:mitchellh/zig-overlay";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: let
+  outputs = { self, nixpkgs, home-manager, devenv, ... }@inputs: let
     mkVM = import ./lib/mkvm.nix;
 
     # Overlays is the list of overlays we want to apply from flake inputs.
