@@ -99,10 +99,19 @@ in {
     enable = true;
     extensions = with pkgs.vscode-extensions; [
       dracula-theme.theme-dracula
-      vscodevim.vim
       yzhang.markdown-all-in-one
     ];
   };
+
+  programs.emacs = {
+    enable = true;
+    package = pkgs.emacs;  # replace with pkgs.emacs-gtk, or a version provided by the community overlay if desired.
+    extraConfig = ''
+      (setq standard-indent 2)
+    '';
+  };
+
+
 
   programs.direnv = {
     enable = true;
