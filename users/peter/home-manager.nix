@@ -35,6 +35,7 @@ in {
     pkgs.ripgrep
     pkgs.tree
     pkgs.watch
+    pkgs.docker-compose
     #pkgs.emacs
 
     pkgs.gopls
