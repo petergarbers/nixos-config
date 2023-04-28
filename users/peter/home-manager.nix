@@ -36,7 +36,7 @@ in {
     pkgs.tree
     pkgs.watch
     pkgs.docker-compose
-    #pkgs.emacs
+    pkgs.nodejs-16_x
 
     pkgs.gopls
     pkgs.zigpkgs.master
@@ -101,6 +101,8 @@ in {
     extensions = with pkgs.vscode-extensions; [
       dracula-theme.theme-dracula
       yzhang.markdown-all-in-one
+      vadimcn.vscode-lldb
+      rust-lang.rust-analyzer
     ];
   };
 
