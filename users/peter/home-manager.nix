@@ -37,6 +37,7 @@ in {
     pkgs.watch
     pkgs.docker-compose
     pkgs.nodejs-16_x
+    pkgs.fzf
 
     pkgs.gopls
     pkgs.zigpkgs.master
@@ -110,6 +111,7 @@ in {
     enable = true;
     shellAliases = {
       ll = "ls -l";
+      em  = "emacs . &";
     };
     history = {
       size = 10000;
