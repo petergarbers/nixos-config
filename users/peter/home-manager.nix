@@ -120,7 +120,7 @@ in {
     };
     oh-my-zsh = {
       enable = true;
-      plugins = [ "direnv" "fzf" "git" "git-extras" "docker" "history" "ssh-agent" "gpg-agent" "zsh-completions" "thefuck" ];
+      plugins = [ "direnv" "fzf" "git" "git-extras" "docker" "history" "ssh-agent" "gpg-agent" "last-working-dir" "history" "ssh-agent" "gpg-agent" ];
       theme = "agnoster";
     };
   };
