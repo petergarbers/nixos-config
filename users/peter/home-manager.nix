@@ -38,6 +38,7 @@ in {
     pkgs.docker-compose
     pkgs.nodejs-16_x
     pkgs.fzf
+    pkgs.dolphin
 
     pkgs.gopls
     pkgs.zigpkgs.master
@@ -97,15 +98,15 @@ in {
     };
   };
 
-  programs.vscode = {
-    enable = true;
-    extensions = with pkgs.vscode-extensions; [
-      dracula-theme.theme-dracula
-      yzhang.markdown-all-in-one
-      vadimcn.vscode-lldb
-      rust-lang.rust-analyzer
-    ];
-  };
+  # programs.vscode = {
+  #   enable = true;
+  #   extensions = with pkgs.vscode-extensions; [
+  #     dracula-theme.theme-dracula
+  #     yzhang.markdown-all-in-one
+  #     vadimcn.vscode-lldb
+  #     rust-lang.rust-analyzer
+  #   ];
+  # };
 
   programs.zsh = {
     enable = true;
