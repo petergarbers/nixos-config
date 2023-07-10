@@ -39,6 +39,7 @@ in {
     pkgs.nodejs-16_x
     pkgs.fzf
     pkgs.dolphin
+    pkgs.inetutils
 
     pkgs.gopls
     pkgs.zigpkgs.master
