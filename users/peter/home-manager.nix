@@ -59,6 +59,7 @@ in {
     LANG = "en_US.UTF-8";
     LC_CTYPE = "en_US.UTF-8";
     LC_ALL = "en_US.UTF-8";
+    NIXPKGS_ALLOW_UNFREE = 1;
     EDITOR = "nvim";
     PAGER = "less -FirSwX";
     MANPAGER = "${manpager}/bin/manpager";
