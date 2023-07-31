@@ -40,6 +40,7 @@ in {
     pkgs.fzf
     pkgs.dolphin
     pkgs.inetutils
+    pkgs.stripe-cli
 
     pkgs.gopls
     pkgs.zigpkgs.master
