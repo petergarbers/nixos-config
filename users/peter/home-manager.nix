@@ -41,7 +41,7 @@ in {
     pkgs.dolphin
     pkgs.inetutils
     pkgs.stripe-cli
-
+    pkgs.bind
     pkgs.gopls
     pkgs.zigpkgs.master
   ] ++ (lib.optionals isLinux [
